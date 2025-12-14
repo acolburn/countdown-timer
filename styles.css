@@ -1,0 +1,15 @@
+#start,
+#stop {
+  font-family: "Segoe", sans-serif;
+  font-size: 28px;
+  padding: 50px 60px;
+  margin-bottom: 15px;
+}
+
+#display {
+  display: inline-flex;
+  font-family: "Segoe", sans-serif;
+  font-size: 26px;
+  border: 1px solid black;
+  padding: 20px 30px;
+}
