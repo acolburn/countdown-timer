@@ -1,15 +1,30 @@
-#start,
-#stop {
+html {
+  background-color: steelblue;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+
+#start {
+  background-color: steelblue;
+  color: whitesmoke;
+  box-shadow: 1px 1px 30px 2px whitesmoke;
   font-family: "Segoe", sans-serif;
   font-size: 28px;
-  padding: 50px 60px;
+  width: 250px;
+  height: 250px;
   margin-bottom: 15px;
+  border-radius: 12px;
 }
 
 #display {
-  display: inline-flex;
+  display: flex;
   font-family: "Segoe", sans-serif;
   font-size: 26px;
-  border: 1px solid black;
-  padding: 20px 30px;
+  border: 2px solid black;
+  width: 250px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
 }
