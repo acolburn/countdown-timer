@@ -35,7 +35,7 @@ function startCountdown() {
       const id = setTimeout(() => {
         remaining = i;
         updateDisplay(remaining);
-        if (i < 10) {
+        if (i < 11) {
           display.style.fontWeight = "bold";
         } else {
           display.style.fontWeight = "normal";
@@ -43,6 +43,7 @@ function startCountdown() {
         if (remaining === 0) {
           running = false;
           startBtn.innerText = "Start";
+          display.style.fontWeight = "normal";
         }
       }, (START_SECONDS - i) * 1000);
       timeoutIds.push(id);
@@ -55,6 +56,7 @@ function startCountdown() {
     startBtn.style.backgroundColor = "steelblue";
     display.style.backgroundColor = "steelblue";
     display.style.backgroundColor = "whitesmoke";
+    display.style.fontWeight = "normal";
 
     updateDisplay(remaining);
   }
