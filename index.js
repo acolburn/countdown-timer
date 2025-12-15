@@ -5,7 +5,7 @@ let running = false;
 
 const display = document.getElementById("display");
 const startBtn = document.getElementById("start");
-// const stopBtn = document.getElementById("stop");
+
 
 function updateDisplay(sec) {
   display.textContent = `${sec} seconds`;
