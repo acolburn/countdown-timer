@@ -1,4 +1,4 @@
-const START_SECONDS = 40;
+const START_SECONDS = 120;
 let remaining = START_SECONDS;
 let timeoutIds = [];
 let running = false;
@@ -6,9 +6,8 @@ let running = false;
 const display = document.getElementById("display");
 const startBtn = document.getElementById("start");
 
-
 function updateDisplay(sec) {
-  display.textContent = `${sec} seconds`;
+  display.textContent = sec === 1 ? "1 second" : `${sec} seconds`;
 }
 
 function clearAllTimeouts() {
@@ -25,27 +24,38 @@ function startCountdown() {
     running = true;
     startBtn.innerText = "Stop and Reset";
     startBtn.style.backgroundColor = "#fc3d21";
-    display.style.backgroundColor = "whitesmoke";
-    display.style.color = "steelblue";
+    display.style.backgroundColor = "#2E7D32";
+    display.style.color = "whitesmoke";
     remaining = START_SECONDS;
     updateDisplay(remaining);
 
     for (let i = START_SECONDS - 1; i >= 0; i--) {
       // schedule tick at (START_SECONDS - i) seconds later
-      const id = setTimeout(() => {
-        remaining = i;
-        updateDisplay(remaining);
-        if (i < 11) {
-          display.style.fontWeight = "bold";
-        } else {
-          display.style.fontWeight = "normal";
-        }
-        if (remaining === 0) {
-          running = false;
-          startBtn.innerText = "Start";
-          display.style.fontWeight = "normal";
-        }
-      }, (START_SECONDS - i) * 1000);
+      const id = setTimeout(
+        () => {
+          remaining = i;
+          updateDisplay(remaining);
+          if (i < 91) {
+            display.style.backgroundColor = "#F9A825";
+            display.style.color = "#2b2b2b";
+          }
+          if (i < 61) {
+            display.style.backgroundColor = "#EF6C00";
+          }
+          if (i < 31) {
+            display.style.backgroundColor = "#fc3d21";
+          }
+
+          if (remaining === 0) {
+            running = false;
+            startBtn.innerText = "Start";
+            startBtn.style.backgroundColor = "";
+            display.style.backgroundColor = "";
+            display.style.color = "";
+          }
+        },
+        (START_SECONDS - i) * 1000,
+      );
       timeoutIds.push(id);
     }
   } else if (running === true) {
@@ -53,10 +63,9 @@ function startCountdown() {
     clearAllTimeouts();
     remaining = START_SECONDS;
     startBtn.innerText = "Start";
-    startBtn.style.backgroundColor = "steelblue";
-    display.style.backgroundColor = "steelblue";
-    display.style.backgroundColor = "whitesmoke";
-    display.style.fontWeight = "normal";
+    startBtn.style.backgroundColor = "";
+    display.style.backgroundColor = "";
+    display.style.color = "";
 
     updateDisplay(remaining);
   }
