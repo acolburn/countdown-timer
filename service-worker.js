@@ -1,11 +1,11 @@
 const CACHE_NAME = "countdown-pwa-v1";
 
 const ASSETS_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./index.js",
-  "./styles.css",
-  "./manifest.webmanifest",
+  "/",
+  "/index.js",
+  "/index.html",
+  "/styles.css",
+  "/manifest.webmanifest",
 ];
 
 self.addEventListener("install", (event) => {
