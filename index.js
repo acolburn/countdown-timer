@@ -22,7 +22,7 @@ function startCountdown() {
   if (running === false) {
     clearAllTimeouts(); // ensure clean state
     running = true;
-    startBtn.innerText = "Stop and Reset";
+    startBtn.innerText = "Reset";
     startBtn.style.backgroundColor = "#fc3d21";
     display.style.backgroundColor = "#2E7D32";
     display.style.color = "whitesmoke";
