@@ -13,12 +13,9 @@ function updateDisplay(sec) {
 function clearAllTimeouts() {
   timeoutIds.forEach((id) => clearTimeout(id));
   timeoutIds = [];
-  // running = false;
 }
 
 function startCountdown() {
-  // if (running) return; // prevent double-start
-
   if (running === false) {
     clearAllTimeouts(); // ensure clean state
     running = true;
@@ -77,9 +74,4 @@ function startCountdown() {
   }
 }
 
-// function stopAndReset() {
-// console.log('Timer stopped and reset.');
-// }
-
 startBtn.addEventListener("click", startCountdown);
-// stopBtn.addEventListener("click", stopAndReset);
