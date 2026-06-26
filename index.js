@@ -24,8 +24,9 @@ function startCountdown() {
     running = true;
     startBtn.innerText = "Reset";
     startBtn.style.backgroundColor = "#fc3d21";
-    display.style.backgroundColor = "#2E7D32";
+    display.style.backgroundColor = "#2e7d32";
     display.style.color = "whitesmoke";
+    display.style.borderColor = "#a5d6a7";
     remaining = START_SECONDS;
     updateDisplay(remaining);
 
@@ -38,12 +39,15 @@ function startCountdown() {
           if (i < 91) {
             display.style.backgroundColor = "#F9A825";
             display.style.color = "#2b2b2b";
+            display.style.borderColor = "#FFF59D";
           }
           if (i < 61) {
             display.style.backgroundColor = "#EF6C00";
+            display.style.borderColor = "#FFCC80";
           }
           if (i < 31) {
             display.style.backgroundColor = "#fc3d21";
+            display.style.borderColor = "#FFAB91";
           }
 
           if (remaining === 0) {
@@ -52,6 +56,7 @@ function startCountdown() {
             startBtn.style.backgroundColor = "";
             display.style.backgroundColor = "";
             display.style.color = "";
+            display.style.borderColor = "";
           }
         },
         (START_SECONDS - i) * 1000,
@@ -66,6 +71,7 @@ function startCountdown() {
     startBtn.style.backgroundColor = "";
     display.style.backgroundColor = "";
     display.style.color = "";
+    display.style.borderColor = "";
 
     updateDisplay(remaining);
   }
